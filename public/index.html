@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Death Records Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- LOGIN SECTION -->
+    <section id="login-section" class="auth-container">
+        <div class="auth-card">
+            <h1>Death Records</h1>
+            <p>Management System</p>
+
+            <h2>Login</h2>
+
+            <form id="login-form">
+                <label>Username</label>
+                <input type="text" id="login-username"
+                    placeholder="Enter username" required>
+
+                <label>Password</label>
+                <input type="password" id="login-password"
+                    placeholder="Enter password" required>
+
+                <button type="submit">Login</button>
+            </form>
+
+            <p id="login-message"></p>
+
+            <p class="auth-switch">
+                Don't have an account?
+                <a href="#" id="show-register">Register</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- REGISTRATION SECTION -->
+    <section id="register-section" class="auth-container hidden">
+        <div class="auth-card">
+            <h1>Death Records</h1>
+            <p>Management System</p>
+
+            <h2>Create Account</h2>
+
+            <form id="register-form">
+                <label>Username</label>
+                <input type="text" id="register-username"
+                    placeholder="Enter username" required>
+
+                <label>Password</label>
+                <input type="password" id="register-password"
+                    placeholder="Enter password" required>
+
+                <button type="submit">Register</button>
+            </form>
+
+            <p id="register-message"></p>
+
+            <p class="auth-switch">
+                Already have an account?
+                <a href="#" id="show-login">Login</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- MAIN DASHBOARD -->
+    <section id="dashboard-section" class="hidden">
+
+        <aside class="sidebar">
+            <h2>Death Records</h2>
+            <p>Management System</p>
+
+            <nav>
+                <a href="#" id="dashboard-link">Dashboard</a>
+                <a href="#" id="records-link">Death Records</a>
+                <a href="#" id="logout-button">Logout</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+
+            <header>
+                <h1>Dashboard</h1>
+                <p>Welcome to the Death Records Management System</p>
+            </header>
+
+            <div class="stats-container">
+                <div class="stat-card">
+                    <h3>Total Death Records</h3>
+                    <h2 id="total-records">0</h2>
+                </div>
+            </div>
+
+            <section class="records-section">
+                <div class="records-header">
+                    <h2>Death Records</h2>
+                    <button id="show-add-form">+ Add Record</button>
+                </div>
+
+                <!-- ADD RECORD FORM -->
+                <form id="record-form" class="hidden">
+                    <h3 id="form-title">Add Death Record</h3>
+
+                    <label>Full Name</label>
+                    <input type="text" id="full-name"
+                        placeholder="Enter full name" required>
+
+                    <label>Date of Death</label>
+                    <input type="date" id="date-of-death" required>
+
+                    <label>Place of Death</label>
+                    <input type="text" id="place-of-death"
+                        placeholder="Enter place of death" required>
+
+                    <button type="submit" id="save-record">
+                        Save Record
+                    </button>
+
+                    <button type="button" id="cancel-form">
+                        Cancel
+                    </button>
+                </form>
+
+                <!-- RECORDS TABLE -->
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Full Name</th>
+                                <th>Date of Death</th>
+                                <th>Place of Death</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="records-table">
+                            <tr>
+                                <td colspan="5">No records loaded.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p id="record-message"></p>
+            </section>
+
+        </main>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

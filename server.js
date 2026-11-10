@@ -15,7 +15,7 @@ const app = express();
 const db = new Database("death_records.db");
 
 app.use(express.json());
-
+app.use(express.static("public"));
 
 db.exec(`
   CREATE TABLE IF NOT EXISTS death_records (
